@@ -154,7 +154,73 @@ export default function LandingPage() {
         googlePlay: null,
       },
     },
-  ]
+  ];
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const features = [
+    {
+      title: 'Cross-Platform Development',
+      description: 'We build once — it runs on both iOS and Android. Flutter and React Native let us deliver fast, efficient, and consistent mobile apps across platforms.'
+    },
+    {
+      title: 'In-App Purchases & Subscriptions',
+      description: 'Monetize your app with one-time payments or auto-renewing subscriptions. We support Apple App Store and Google Play Billing integration.'
+    },
+    {
+      title: 'Real-Time Chat & Notifications',
+      description: 'Enable direct communication with real-time messaging, group chats, media sharing, and push notifications to keep users engaged and informed.'
+    },
+    {
+      title: 'Location & Maps',
+      description: 'Real-time geolocation, live user tracking, route planning, and Google/Apple Maps integration — perfect for logistics, delivery, or social features.'
+    },
+    {
+      title: 'User Authentication',
+      description: 'Secure and smooth login options: email, phone, Google, Apple, or Facebook. We also support 2FA for enhanced security.'
+    },
+    {
+      title: 'Offline Support & Sync',
+      description: 'Your app works even without a connection. Data is saved locally and synced automatically once the device is back online.'
+    },
+    {
+      title: 'Analytics & Crash Reporting',
+      description: 'Gain insights into user behavior and app performance. We integrate with Firebase, Sentry, and Mixpanel to track usage and detect issues in real time.'
+    },
+    {
+      title: 'Admin Panel / CMS',
+      description: 'Manage your app’s content, users, and features from a web-based dashboard. Custom-built or integrated with existing CMS solutions.'
+    },
+    {
+      title: 'AI Integrations',
+      description: 'Boost your app with AI features like chatbots, smart content generation, and recommendation systems — tailored to your business.'
+    },
+    {
+      title: 'Custom Animations & Modern UI',
+      description: 'We create sleek, responsive interfaces with modern animations and intuitive design — delivering a smooth and memorable user experience.'
+    },
+    {
+      title: 'Payment Integrations',
+      description: 'Accept payments with Stripe, PayPal, Przelewy24, Apple Pay, and Google Pay — fast, secure, and user-friendly.'
+    },
+    {
+      title: 'Multi-language Support',
+      description: 'Expand your reach with localization. We build apps that support multiple languages and adapt to regional settings automatically.'
+    },
+    {
+      title: 'Secure Architecture',
+      description: 'We follow best practices in app security: encrypted data, secure APIs, authentication protocols, and GDPR compliance.'
+    },
+    {
+      title: 'Scalable Backend & APIs',
+      description: 'We build reliable and scalable backends using Firebase, Supabase, Node.js, or Django — with REST or GraphQL APIs as needed.'
+    },
+  ];
+
+  const toggleFeature = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   const services = [
     {
@@ -332,23 +398,37 @@ export default function LandingPage() {
       </section>
 
       {/* Projects Section */}
+
+      {/* Projects Section */}
       <section id="projects" className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Projects</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-16 pb-16 border-b border-gray-100">
+            <h2
+              className={`text-4xl font-bold text-gray-900 mb-4 transition-all duration-1000 ease-out delay-200 ${
+                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+            >
+              Our Projects
+            </h2>
+            <p
+              className={`text-xl text-gray-600 max-w-2xl mx-auto transition-all duration-1000 ease-out delay-400 ${
+                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+            >
               Discover some of our recent work and the innovative solutions we've built for our clients
             </p>
           </div>
 
           <div className="space-y-20">
-            {projects.map((project, index) => (
+            {(showAllProjects ? projects : projects.slice(0, 3)).map((project, index) => (
               <div
                 key={project.id}
                 ref={(el) => (projectRefs.current[index] = el)}
                 data-index={index}
                 className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-12 transition-all duration-700 ease-out ${
-                  visibleProjects.has(index) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  visibleProjects.has(index) || showAllProjects
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
                 }`}
               >
                 <div className="flex-1">
@@ -394,6 +474,90 @@ export default function LandingPage() {
                 </div>
               </div>
             ))}
+            {!showAllProjects && projects.length > 2 && (
+              <div className="text-center">
+                <Button
+                  onClick={() => setShowAllProjects(true)}
+                  variant="outline"
+                  className="mt-6"
+                >
+                  Show More Projects
+                </Button>
+              </div>
+            )}
+            {showAllProjects && projects.length > 2 && (
+              <div className="text-center">
+                <Button
+                  onClick={() => setShowAllProjects(false)}
+                  variant="outline"
+                  className="mt-6"
+                >
+                  Show Less Projects
+                </Button>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities Accordion Section */}
+      <section id="capabilities" className="py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Core Features We Deliver
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Essential functionalities built into our apps — crafted for performance, scalability, and user satisfaction.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {(showAllFeatures ? features : features.slice(0, 4)).map((feature, index) => (
+              <div key={index} className="border-b border-gray-200">
+                <button
+                  onClick={() => toggleFeature(index)}
+                  className="w-full text-left py-4 flex justify-between items-center focus:outline-none"
+                >
+                  <span className="text-lg font-medium text-gray-900">
+                    {feature.title}
+                  </span>
+                  <span className="text-gray-500">
+                    {openIndex === index ? '-' : '+'}
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-out ${
+                    openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <p className="py-2 text-gray-600">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+            {!showAllFeatures && features.length > 4 && (
+              <div className="text-center">
+                <Button
+                  onClick={() => setShowAllFeatures(true)}
+                  variant="outline"
+                  className="mt-6"
+                >
+                  Show More Features
+                </Button>
+              </div>
+            )}
+            {showAllFeatures && (
+              <div className="text-center">
+                <Button
+                  onClick={() => setShowAllFeatures(false)}
+                  variant="outline"
+                  className="mt-6"
+                >
+                  Show Less Features
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </section>
