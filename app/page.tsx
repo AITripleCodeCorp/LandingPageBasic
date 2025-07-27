@@ -109,7 +109,7 @@ export default function LandingPage() {
         "A comprehensive travel expense tracking app that allows users to monitor all their travel costs by country in real-time. Perfect for travelers who want to stay on budget and track their spending habits while exploring the world.",
       type: "Mobile App",
       technologies: ["Flutter", "Django", "Python"],
-      image: "/placeholder.svg?height=400&width=300&text=TravelBalance+Mobile+App",
+      image: "/projects-logos/travel.jpg",
       links: {
         appStore: "https://apps.apple.com/pl/app/expense-tracker-travelbalance/id6549954832?platform=iphone",
         googlePlay: "https://play.google.com/store/apps/details?id=com.TravelBalance&hl=pl",
@@ -122,7 +122,7 @@ export default function LandingPage() {
         "An interactive mobile learning app designed for Polish users who want to become organists. The app provides comprehensive practice tools, lessons, and interactive features to master organ playing techniques and music theory.",
       type: "Educational App",
       technologies: ["Flutter"],
-      image: "/placeholder.svg?height=400&width=300&text=Organista+Learning+App",
+      image: "/projects-logos/organist.jpg",
       links: {
         appStore: "https://apps.apple.com/pl/app/organista-interaktywna-nauka/id6742075235?platform=iphone",
         googlePlay: "https://play.google.com/store/apps/details?id=com.domainname.Organist&hl=pl",
@@ -135,7 +135,7 @@ export default function LandingPage() {
         "An AI-powered sightseeing companion that transforms your travel experience. Simply point your camera at any monument or landmark to receive detailed information and historical context from your virtual AI guide.",
       type: "AI Mobile App",
       technologies: ["Flutter", ".NET", "C#", "AI"],
-      image: "/placeholder.svg?height=400&width=300&text=Guide+AI+Scanner",
+      image: "/projects-logos/monument.jpg",
       links: {
         appStore: "https://apps.apple.com/pl/app/guide-ai-landmark-scanner/id6744541300?platform=iphone",
         googlePlay: null,
@@ -148,7 +148,7 @@ export default function LandingPage() {
         "Discover the natural world around you with AI-powered identification. Take photos of flowers, animals, landscapes, and more to instantly learn about nature's wonders with detailed descriptions and fascinating facts.",
       type: "AI Mobile App",
       technologies: ["Flutter", ".NET", "C#", "AI"],
-      image: "/placeholder.svg?height=400&width=300&text=Nature+Scanner+AI",
+      image: "/projects-logos/nature.jpg",
       links: {
         appStore: "https://apps.apple.com/pl/app/nature-scanner-ai-identifier/id6745711918?platform=iphone",
         googlePlay: null,
@@ -161,8 +161,7 @@ export default function LandingPage() {
         "Discover details about any car by scanning its image. Recognize make, model, year, specs, and more using AI-powered detection.",
       type: "AI Mobile App",
       technologies: ["Flutter", ".NET", "C#", "AI"],
-
-      image: "/placeholder.svg?height=400&width=300&text=Car+Scanner+AI",
+      image: "/projects-logos/car.jpg",
       links: {
         appStore: "https://apps.apple.com/pl/app/car-scanner-ai-identifier/id6744433158?platform=iphone",
         googlePlay: null,
@@ -175,7 +174,7 @@ export default function LandingPage() {
         "A website for a Doctor of Juridical Science, featuring editable content, news updates, and a contact form powered by a headless CMS.",
       type: "Website",
       technologies: ["Angular", "Headless CMS"],
-      image: "/placeholder.svg?height=400&width=300&text=CodeFlashcards+Learn+Coding",
+      image: "/projects-logos/law.jpg",
       links: {
         appStore: null,
         googlePlay: null,
@@ -189,7 +188,7 @@ export default function LandingPage() {
         "Accelerate your Android app testing and deployment process with Twelve Testers. Designed for developers, it helps you meet Play Store testing requirements, gather real user feedback, and connect with a community of testers—delivering stress-free, efficient, and collaborative app testing.",
       type: "Developer Tool",
       technologies: ["Flutter", ".NET", "C#"],
-      image: "/placeholder.svg?height=400&width=300&text=Twelve+Testers+Android+Beta",
+      image: "/projects-logos/testers.jpg",
       links: {
         appStore: null,
         googlePlay: "https://play.google.com/store/apps/details?id=com.domainname.TwelveTesters",
@@ -479,7 +478,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="space-y-20">
+          <div className="space-y-20 flex flex-col items-center">
             {(showAllProjects ? projects : projects.slice(0, 3)).map((project, index) => (
               <div
                 key={project.id}
@@ -491,16 +490,16 @@ export default function LandingPage() {
                     : "opacity-0 translate-y-8"
                 }`}
               >
-                <div className="flex-1">
+                <div className="flex-0">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    width={600}
-                    height={400}
+                    width={128}
+                    height={128}
                     className="rounded-2xl shadow-2xl"
                   />
                 </div>
-                <div className="flex-1 space-y-6">
+                <div className="flex-1 space-y-6 max-w-lg">
                   <div>
                     <Badge variant="secondary" className="mb-3">
                       {project.type}
