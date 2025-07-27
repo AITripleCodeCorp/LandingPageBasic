@@ -623,7 +623,7 @@ export default function LandingPage() {
             {services.map((service, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
                 <CardContent className="p-8 text-center">
-                  <div className="mb-4 text-gray-900">{service.icon}</div>
+                  <div className="flex justify-center mb-4 text-gray-900">{service.icon}</div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
                   <p className="text-gray-600">{service.description}</p>
                 </CardContent>
