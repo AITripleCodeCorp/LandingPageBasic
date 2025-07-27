@@ -170,9 +170,9 @@ export default function LandingPage() {
     },
     {
       id: 6,
-      title: "Doctor of Legal Sciences Website",
+      title: "Doctor of Juridical Science Website",
       description:
-        "A website for a Doctor of Legal Sciences, featuring editable content, news updates, and a contact form powered by a headless CMS.",
+        "A website for a Doctor of Juridical Science, featuring editable content, news updates, and a contact form powered by a headless CMS.",
       type: "Website",
       technologies: ["Angular", "Headless CMS"],
       image: "/placeholder.svg?height=400&width=300&text=CodeFlashcards+Learn+Coding",
