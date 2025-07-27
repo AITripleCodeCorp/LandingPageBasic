@@ -111,7 +111,7 @@ export default function LandingPage() {
       technologies: ["Flutter", "Django", "Python"],
       image: "/placeholder.svg?height=400&width=300&text=TravelBalance+Mobile+App",
       links: {
-        appStore: "https://apps.apple.com/pl/app/expense-tracker-travelbalance/id6549954832",
+        appStore: "https://apps.apple.com/pl/app/expense-tracker-travelbalance/id6549954832?platform=iphone",
         googlePlay: "https://play.google.com/store/apps/details?id=com.TravelBalance&hl=pl",
       },
     },
@@ -124,7 +124,7 @@ export default function LandingPage() {
       technologies: ["Flutter"],
       image: "/placeholder.svg?height=400&width=300&text=Organista+Learning+App",
       links: {
-        appStore: "https://apps.apple.com/pl/app/organista-interaktywna-nauka/id6742075235",
+        appStore: "https://apps.apple.com/pl/app/organista-interaktywna-nauka/id6742075235?platform=iphone",
         googlePlay: "https://play.google.com/store/apps/details?id=com.domainname.Organist&hl=pl",
       },
     },
@@ -137,7 +137,7 @@ export default function LandingPage() {
       technologies: ["Flutter", ".NET", "C#", "AI"],
       image: "/placeholder.svg?height=400&width=300&text=Guide+AI+Scanner",
       links: {
-        appStore: "https://apps.apple.com/pl/app/guide-ai-landmark-scanner/id6744541300",
+        appStore: "https://apps.apple.com/pl/app/guide-ai-landmark-scanner/id6744541300?platform=iphone",
         googlePlay: null,
       },
     },
@@ -150,8 +150,49 @@ export default function LandingPage() {
       technologies: ["Flutter", ".NET", "C#", "AI"],
       image: "/placeholder.svg?height=400&width=300&text=Nature+Scanner+AI",
       links: {
-        appStore: "https://apps.apple.com/pl/app/nature-scanner-ai-identifier/id6745711918",
+        appStore: "https://apps.apple.com/pl/app/nature-scanner-ai-identifier/id6745711918?platform=iphone",
         googlePlay: null,
+      },
+    },
+    {
+      id: 5,
+      title: "Car Scanner: AI Identifier",
+      description:
+        "Discover details about any car by scanning its image. Recognize make, model, year, specs, and more using AI-powered detection.",
+      type: "AI Mobile App",
+      technologies: ["Flutter", ".NET", "C#", "AI"],
+
+      image: "/placeholder.svg?height=400&width=300&text=Car+Scanner+AI",
+      links: {
+        appStore: "https://apps.apple.com/pl/app/car-scanner-ai-identifier/id6744433158?platform=iphone",
+        googlePlay: null,
+      },
+    },
+    {
+      id: 6,
+      title: "Doctor of Legal Sciences Website",
+      description:
+        "A website for a Doctor of Legal Sciences, featuring editable content, news updates, and a contact form powered by a headless CMS.",
+      type: "Website",
+      technologies: ["Angular", "Headless CMS"],
+      image: "/placeholder.svg?height=400&width=300&text=CodeFlashcards+Learn+Coding",
+      links: {
+        appStore: null,
+        googlePlay: null,
+        website: "https://jonaszkita.pl/",
+      },
+    },
+    {
+      id: 7,
+      title: "Twelve Testers: Android Beta Testing",
+      description:
+        "Accelerate your Android app testing and deployment process with Twelve Testers. Designed for developers, it helps you meet Play Store testing requirements, gather real user feedback, and connect with a community of testers—delivering stress-free, efficient, and collaborative app testing.",
+      type: "Developer Tool",
+      technologies: ["Flutter", ".NET", "C#"],
+      image: "/placeholder.svg?height=400&width=300&text=Twelve+Testers+Android+Beta",
+      links: {
+        appStore: null,
+        googlePlay: "https://play.google.com/store/apps/details?id=com.domainname.TwelveTesters",
       },
     },
   ];
@@ -272,6 +313,13 @@ export default function LandingPage() {
                 Projects
               </a>
               <a
+                href="#capabilities"
+                onClick={(e) => handleSmoothScroll(e, "capabilities")}
+                className="text-gray-600 hover:text-gray-900 transition-colors text-sm cursor-pointer"
+              >
+                Features
+              </a>
+              <a
                 href="#services"
                 onClick={(e) => handleSmoothScroll(e, "services")}
                 className="text-gray-600 hover:text-gray-900 transition-colors text-sm cursor-pointer"
@@ -329,13 +377,25 @@ export default function LandingPage() {
                   Projects
                 </a>
                 <a
+                  href="#capabilities"
+                  onClick={(e) => handleSmoothScroll(e, "capabilities")}
+                  className={`block px-6 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-all duration-300 text-base font-medium cursor-pointer transform ${
+                    isMobileMenuOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+                  }`}
+                  style={{
+                    transitionDelay: isMobileMenuOpen ? "200ms" : "0ms",
+                  }}
+                >
+                  Features
+                </a>
+                <a
                   href="#services"
                   onClick={(e) => handleSmoothScroll(e, "services")}
                   className={`block px-6 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-all duration-300 text-base font-medium cursor-pointer transform ${
                     isMobileMenuOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
                   }`}
                   style={{
-                    transitionDelay: isMobileMenuOpen ? "200ms" : "0ms",
+                    transitionDelay: isMobileMenuOpen ? "300ms" : "0ms",
                   }}
                 >
                   Services
@@ -348,7 +408,7 @@ export default function LandingPage() {
                     isMobileMenuOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
                   }`}
                   style={{
-                    transitionDelay: isMobileMenuOpen ? "300ms" : "0ms",
+                    transitionDelay: isMobileMenuOpen ? "400ms" : "0ms",
                   }}
                 >
                   LinkedIn
@@ -456,12 +516,14 @@ export default function LandingPage() {
                     ))}
                   </div>
                   <div className="flex gap-4">
-                    <Button asChild>
-                      <Link href={project.links.appStore} target="_blank" rel="noopener noreferrer">
-                        <AppStoreIcon />
-                        App Store
-                      </Link>
-                    </Button>
+                    {project.links.appStore && (
+                      <Button asChild>
+                        <Link href={project.links.appStore} target="_blank" rel="noopener noreferrer">
+                          <AppStoreIcon />
+                          App Store
+                        </Link>
+                      </Button>
+                    )}
                     {project.links.googlePlay && (
                       <Button variant="outline" asChild>
                         <Link href={project.links.googlePlay} target="_blank" rel="noopener noreferrer">
@@ -470,29 +532,26 @@ export default function LandingPage() {
                         </Link>
                       </Button>
                     )}
+                    {project.links.website && (
+                      <Button variant="outline" asChild>
+                        <Link href={project.links.website} target="_blank" rel="noopener noreferrer">
+                          <Globe className="w-4 h-4 mr-2" />
+                          Website
+                        </Link>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
             ))}
-            {!showAllProjects && projects.length > 2 && (
+            {projects.length > 3 && (
               <div className="text-center">
                 <Button
-                  onClick={() => setShowAllProjects(true)}
+                  onClick={() => setShowAllProjects(prev => !prev)}
                   variant="outline"
                   className="mt-6"
                 >
-                  Show More Projects
-                </Button>
-              </div>
-            )}
-            {showAllProjects && projects.length > 2 && (
-              <div className="text-center">
-                <Button
-                  onClick={() => setShowAllProjects(false)}
-                  variant="outline"
-                  className="mt-6"
-                >
-                  Show Less Projects
+                  {showAllProjects ? 'Show Less Projects' : 'Show More Projects'}
                 </Button>
               </div>
             )}
@@ -501,7 +560,7 @@ export default function LandingPage() {
       </section>
 
       {/* Capabilities Accordion Section */}
-      <section id="capabilities" className="py-20 bg-white">
+      <section id="capabilities" className="py-20 bg-gray-50 border-t border-gray-100">
         <div className="max-w-3xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -536,25 +595,14 @@ export default function LandingPage() {
                 </div>
               </div>
             ))}
-            {!showAllFeatures && features.length > 4 && (
+            {features.length > 4 && (
               <div className="text-center">
                 <Button
-                  onClick={() => setShowAllFeatures(true)}
+                  onClick={() => setShowAllFeatures(prev => !prev)}
                   variant="outline"
                   className="mt-6"
                 >
-                  Show More Features
-                </Button>
-              </div>
-            )}
-            {showAllFeatures && (
-              <div className="text-center">
-                <Button
-                  onClick={() => setShowAllFeatures(false)}
-                  variant="outline"
-                  className="mt-6"
-                >
-                  Show Less Features
+                  {showAllFeatures ? 'Show Less Features' : 'Show More Features'}
                 </Button>
               </div>
             )}
