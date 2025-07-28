@@ -206,7 +206,7 @@ export default function LandingPage() {
         appStore: "https://apps.apple.com/pl/app/learn-coding-codeflashcards/id6742793072?platform=iphone",
         googlePlay: "https://play.google.com/store/apps/details?id=com.domainname.ProgrammingFlashcards",
       },
-    },
+    },  
   ];
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -267,7 +267,11 @@ export default function LandingPage() {
     },
     {
       title: 'Scalable Backend & APIs',
-      description: 'We build reliable and scalable backends using Firebase, Supabase, Node.js, or Django — with REST or GraphQL APIs as needed.'
+      description: 'We build reliable and scalable backends using Firebase, Supabase, Node.js, .NET or Django — with REST or GraphQL APIs as needed.'
+    },
+    {
+      title: 'Custom UI Design in Figma',
+      description: 'We craft unique, pixel-perfect interfaces in Figma, following the highest UX/UI standards, align with your brand identity, and ensure a seamless developer handoff for smooth implementation.'
     },
   ];
 
