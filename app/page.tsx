@@ -194,6 +194,19 @@ export default function LandingPage() {
         googlePlay: "https://play.google.com/store/apps/details?id=com.domainname.TwelveTesters",
       },
     },
+    {
+      id: 8,
+      title: "Learn Coding: CodeFlashcards",
+      description:
+        "Master programming faster, smarter, and more efficiently with Learn Coding: CodeFlashcards – the intelligent flashcard app designed for aspiring and experienced developers. Whether you're starting with Python or diving deep into Docker, it helps you retain what matters and learn coding your way.",
+      type: "Educational App",
+      technologies: ["Flutter"],
+      image: "/projects-logos/codeflashcard.jpg",
+      links: {
+        appStore: "https://apps.apple.com/pl/app/learn-coding-codeflashcards/id6742793072?platform=iphone",
+        googlePlay: "https://play.google.com/store/apps/details?id=com.domainname.ProgrammingFlashcards",
+      },
+    },
   ];
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
