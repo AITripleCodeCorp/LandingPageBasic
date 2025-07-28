@@ -113,6 +113,7 @@ export default function LandingPage() {
       links: {
         appStore: "https://apps.apple.com/pl/app/expense-tracker-travelbalance/id6549954832?platform=iphone",
         googlePlay: "https://play.google.com/store/apps/details?id=com.TravelBalance&hl=pl",
+        website: "https://travelbalance.pl/"
       },
     },
     {
