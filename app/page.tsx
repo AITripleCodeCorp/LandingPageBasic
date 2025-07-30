@@ -207,7 +207,7 @@ export default function LandingPage() {
         appStore: "https://apps.apple.com/pl/app/learn-coding-codeflashcards/id6742793072?platform=iphone",
         googlePlay: "https://play.google.com/store/apps/details?id=com.domainname.ProgrammingFlashcards",
       },
-    },  
+    },
   ];
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -532,7 +532,7 @@ export default function LandingPage() {
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex gap-4">
+                  <div className="flex flex-wrap gap-4">
                     {project.links.appStore && (
                       <Button asChild>
                         <Link href={project.links.appStore} target="_blank" rel="noopener noreferrer">
