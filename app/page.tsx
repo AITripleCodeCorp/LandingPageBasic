@@ -103,20 +103,6 @@ export default function LandingPage() {
 
   const projects = [
     {
-      id: 9,
-      title: "Framely: Post to TikTok",
-      description:
-        "A macOS app for creators and small brands to prepare videos and photo carousels, review every setting, and post to their own TikTok account or send them to drafts. Includes optional caption suggestions.",
-      type: "Desktop App",
-      technologies: ["Flutter", "TikTok API"],
-      image: "/framely/icon.png",
-      links: {
-        appStore: null,
-        googlePlay: null,
-        website: "/framely",
-      },
-    },
-    {
       id: 1,
       title: "Expense Tracker: TravelBalance",
       description:
@@ -736,17 +722,6 @@ export default function LandingPage() {
             </p>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p className="mb-3 space-x-4 text-sm">
-              <Link href="/framely" className="hover:text-white">
-                Framely
-              </Link>
-              <Link href="/framely/terms" className="hover:text-white">
-                Terms of Service
-              </Link>
-              <Link href="/framely/privacy" className="hover:text-white">
-                Privacy Policy
-              </Link>
-            </p>
             <p>&copy; {new Date().getFullYear()} TwinCodeCorp. All rights reserved.</p>
           </div>
         </div>
