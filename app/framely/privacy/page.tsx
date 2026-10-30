@@ -3,15 +3,15 @@ import Link from "next/link"
 import { CONTACT_EMAIL, LegalPage, LegalSection } from "@/components/framely/site-chrome"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Framely",
-  description: "What personal data Framely processes when you post to TikTok, why, and how long it is kept.",
+  title: "Privacy Policy | Framelsy",
+  description: "What personal data Framelsy processes when you post to TikTok, why, and how long it is kept.",
 }
 
 export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      intro="This policy explains what personal data Framely, our desktop app for posting to your own TikTok account, and this website process, why, and what your choices are. Framely is built to handle as little data as possible: most things stay on your computer or go straight to TikTok."
+      intro="This policy explains what personal data Framelsy, our desktop app for posting to your own TikTok account, and this website process, why, and what your choices are. Framelsy is built to handle as little data as possible: most things stay on your computer or go straight to TikTok."
     >
       <LegalSection id="who" title="1. Who is responsible">
         <p>
@@ -23,13 +23,13 @@ export default function PrivacyPage() {
       <LegalSection id="data" title="2. What we process">
         <ul>
           <li>
-            <strong>TikTok profile.</strong> When you sign in with TikTok and approve access, TikTok gives Framely your
-            unique TikTok identifier (<code>open_id</code>), display name, username, and avatar. Framely shows them so
+            <strong>TikTok profile.</strong> When you sign in with TikTok and approve access, TikTok gives Framelsy your
+            unique TikTok identifier (<code>open_id</code>), display name, username, and avatar. Framelsy shows them so
             you can see which account you are posting to. They are used on your computer and are not stored on our servers.
           </li>
           <li>
             <strong>Access token.</strong> The token TikTok issues after you approve access is kept in the app’s memory only.
-            It is not written to disk, and it is discarded when you sign out or close Framely.
+            It is not written to disk, and it is discarded when you sign out or close Framelsy.
           </li>
           <li>
             <strong>Your videos.</strong> A video you post is sent from your computer straight to TikTok. We do not
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
           </li>
           <li>
             <strong>Your photos (carousels).</strong> TikTok can only fetch photos from a web address, so when you post
-            a photo carousel Framely uploads the photos to a storage bucket that we operate on Amazon Web Services (AWS)
+            a photo carousel Framelsy uploads the photos to a storage bucket that we operate on Amazon Web Services (AWS)
             and gives TikTok a web address to download them from. The photos sit under a random folder name, but anyone
             who has the exact address could open them until they are deleted. We delete them as soon as TikTok reports
             the final status of your post. If the app is closed or loses its connection before that, any leftover files are deleted
@@ -48,17 +48,17 @@ export default function PrivacyPage() {
             content disclosure choice are sent to TikTok to create your post.
           </li>
           <li>
-            <strong>Post history.</strong> Framely keeps a list of the posts you made (title, time, status, and a small
+            <strong>Post history.</strong> Framelsy keeps a list of the posts you made (title, time, status, and a small
             thumbnail) in a file on your own computer. It never leaves your computer and you can remove it by deleting
             the app’s data folder.
           </li>
           <li>
-            <strong>Technical data.</strong> When Framely or this website contacts a server, that server sees your IP
+            <strong>Technical data.</strong> When Framelsy or this website contacts a server, that server sees your IP
             address and basic request data, as with any internet service. Our website host may keep standard server logs.
           </li>
         </ul>
         <p>
-          Framely does not contain advertising, analytics, or tracking tools, and this website does not use advertising
+          Framelsy does not contain advertising, analytics, or tracking tools, and this website does not use advertising
           or analytics cookies. The optional text suggestions are created on your computer; your content is not sent
           anywhere to create them.
         </p>
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
 
       <LegalSection id="use" title="3. Why we use it">
         <p>
-          We use this data only to run Framely: to sign you in through TikTok, to show which account you are posting
+          We use this data only to run Framelsy: to sign you in through TikTok, to show which account you are posting
           to, to deliver your content to TikTok, and to show you the progress and result of each post. We do not sell
           personal data, use it for advertising, build profiles, or use your content to train AI models.
         </p>
@@ -124,15 +124,15 @@ export default function PrivacyPage() {
           before we act on a request.
         </p>
         <p>
-          <strong>To disconnect Framely:</strong> choose <strong>Sign out</strong> in the app (it revokes the access
-          token with TikTok). You can also remove Framely from the apps connected to your account in your TikTok
+          <strong>To disconnect Framelsy:</strong> choose <strong>Sign out</strong> in the app (it revokes the access
+          token with TikTok). You can also remove Framelsy from the apps connected to your account in your TikTok
           settings. To remove your local post history, delete the app’s data folder on your computer.
         </p>
       </LegalSection>
 
       <LegalSection id="children" title="9. Children">
         <p>
-          Framely is not for children under 13, and we do not knowingly process their data. TikTok sets its own minimum
+          Framelsy is not for children under 13, and we do not knowingly process their data. TikTok sets its own minimum
           age for accounts.
         </p>
       </LegalSection>
@@ -147,7 +147,7 @@ export default function PrivacyPage() {
       <LegalSection id="changes" title="11. Changes">
         <p>
           We may update this policy. We will publish the new version here with a new “Last updated” date. See also our{" "}
-          <Link href="/framely/terms">Terms of Service</Link>.
+          <Link href="/terms-of-service">Terms of Service</Link>.
         </p>
       </LegalSection>
 

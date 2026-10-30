@@ -1,18 +1,18 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Camera, Images, Lock, PenLine, ShieldCheck, SlidersHorizontal } from "lucide-react"
-import { CONTACT_EMAIL, FramelyFooter, FramelyHeader } from "@/components/framely/site-chrome"
+import { CONTACT_EMAIL, FramelsyFooter, FramelsyHeader } from "@/components/framely/site-chrome"
 
 export const metadata: Metadata = {
-  title: "Framely | Post to TikTok from your desktop",
+  title: "Framelsy",
   description:
-    "Framely is a macOS app for creators and small brands: prepare a video or photo carousel, review it, and post it to your own TikTok account or send it to your drafts.",
+    "Framelsy is a macOS app for creators and small brands: prepare a video or photo carousel, review it, and post it to your own TikTok account or send it to your drafts.",
 }
 
 const steps = [
   {
     title: "Sign in with TikTok",
-    text: "You approve access on TikTok’s own website. Framely never sees your password.",
+    text: "You approve access on TikTok’s own website. Framelsy never sees your password.",
   },
   {
     title: "Prepare your post",
@@ -52,7 +52,7 @@ const features = [
   {
     icon: ShieldCheck,
     title: "Nothing posts by surprise",
-    text: "Framely publishes only after you choose Post now or Send to drafts. It never posts for you in the background.",
+    text: "Framelsy publishes only after you choose Post now or Send to drafts. It never posts for you in the background.",
   },
   {
     icon: Lock,
@@ -79,7 +79,7 @@ const permissions = [
 const shots = [
   {
     src: "/framely/sign-in.png",
-    alt: "The Framely sign-in screen with the Sign in with TikTok button",
+    alt: "The Framelsy sign-in screen with the Sign in with TikTok button",
     caption: "Sign in on TikTok’s own page. You choose what to allow.",
   },
   {
@@ -101,12 +101,12 @@ const shots = [
 
 const faq = [
   {
-    q: "Does Framely post without my approval?",
+    q: "Does Framelsy post without my approval?",
     a: "No. Nothing is sent to TikTok until you choose Post now or Send to drafts, and you can review everything first.",
   },
   {
-    q: "Does Framely see my TikTok password?",
-    a: "No. You sign in on TikTok’s website and approve a limited set of permissions. You can end the connection at any time with Sign out in Framely or from your TikTok account settings.",
+    q: "Does Framelsy see my TikTok password?",
+    a: "No. You sign in on TikTok’s website and approve a limited set of permissions. You can end the connection at any time with Sign out in Framelsy or from your TikTok account settings.",
   },
   {
     q: "Where do my videos and photos go?",
@@ -118,28 +118,28 @@ const faq = [
   },
 ]
 
-export default function FramelyPage() {
+export default function FramelsyPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <FramelyHeader />
+      <FramelsyHeader />
 
       <main>
         {/* Hero */}
         <section className="px-4 py-20 md:py-28">
           <div className="container mx-auto max-w-4xl text-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/framely/icon.png" alt="Framely app icon" width={96} height={96} className="mx-auto mb-8 rounded-2xl shadow-xl" />
+            <img src="/framely/icon.png" alt="Framelsy app icon" width={96} height={96} className="mx-auto mb-8 rounded-2xl shadow-xl" />
             <h1 className="text-4xl font-bold leading-tight text-gray-900 md:text-6xl">Post to TikTok from your desktop</h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600 md:text-xl">
-              Framely is a macOS app for creators and small brands. Prepare a video or photo carousel, review every setting,
+              Framelsy is a macOS app for creators and small brands. Prepare a video or photo carousel, review every setting,
               and post it to your own TikTok account, or send it to your drafts to finish in the TikTok app.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
-                href={`mailto:${CONTACT_EMAIL}?subject=Framely%20for%20macOS`}
+                href={`mailto:${CONTACT_EMAIL}?subject=Framelsy%20for%20macOS`}
                 className="rounded-full bg-gray-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-700"
               >
-                Get Framely for macOS
+                Get Framelsy for macOS
               </a>
               <a
                 href="#how-it-works"
@@ -207,8 +207,8 @@ export default function FramelyPage() {
         {/* Permissions */}
         <section className="px-4 py-20">
           <div className="container mx-auto max-w-3xl">
-            <h2 className="text-center text-3xl font-bold text-gray-900">What Framely asks TikTok for</h2>
-            <p className="mt-4 text-center text-gray-600">Framely requests only these three permissions and uses each one for a single purpose.</p>
+            <h2 className="text-center text-3xl font-bold text-gray-900">What Framelsy asks TikTok for</h2>
+            <p className="mt-4 text-center text-gray-600">Framelsy requests only these three permissions and uses each one for a single purpose.</p>
             <dl className="mt-10 divide-y divide-gray-200 rounded-2xl border border-gray-100 bg-white shadow-sm">
               {permissions.map((permission) => (
                 <div key={permission.scope} className="grid gap-1 p-5 sm:grid-cols-[11rem_1fr] sm:gap-6">
@@ -233,8 +233,8 @@ export default function FramelyPage() {
               ))}
             </div>
             <p className="mt-10 text-center text-gray-600">
-              More in our <Link href="/framely/privacy" className="text-emerald-700 underline">Privacy Policy</Link> and{" "}
-              <Link href="/framely/terms" className="text-emerald-700 underline">Terms of Service</Link>, or write to{" "}
+              More in our <Link href="/privacy-policy" className="text-emerald-700 underline">Privacy Policy</Link> and{" "}
+              <Link href="/terms-of-service" className="text-emerald-700 underline">Terms of Service</Link>, or write to{" "}
               <a href={`mailto:${CONTACT_EMAIL}`} className="text-emerald-700 underline">
                 {CONTACT_EMAIL}
               </a>
@@ -244,7 +244,7 @@ export default function FramelyPage() {
         </section>
       </main>
 
-      <FramelyFooter />
+      <FramelsyFooter />
     </div>
   )
 }
