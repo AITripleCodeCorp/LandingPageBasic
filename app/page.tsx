@@ -104,6 +104,20 @@ export default function LandingPage() {
   const projects = [
     {
       id: 1,
+      title: "BeModel: Beauty Models & Stylists",
+      description:
+        "A platform connecting beauty professionals with clients. Stylists and trainers publish offers to quickly find models for their portfolio and training sessions, while users apply to get beauty treatments for free or at a reduced price — all in a safe, aesthetic and trusted space.",
+      type: "Mobile App",
+      technologies: ["Flutter", "Angular", ".NET", "C#"],
+      image: "/projects-logos/bemodel.jpg",
+      links: {
+        appStore: "https://apps.apple.com/pl/app/bemodel/id6761518230",
+        googlePlay: "https://play.google.com/store/apps/details?id=com.domainname.BeModel",
+        website: "https://bemodel.pl/",
+      },
+    },
+    {
+      id: 2,
       title: "Expense Tracker: TravelBalance",
       description:
         "A comprehensive travel expense tracking app that allows users to monitor all their travel costs by country in real-time. Perfect for travelers who want to stay on budget and track their spending habits while exploring the world.",
@@ -117,7 +131,7 @@ export default function LandingPage() {
       },
     },
     {
-      id: 2,
+      id: 3,
       title: "Organista: Interaktywna Nauka",
       description:
         "An interactive mobile learning app designed for Polish users who want to become organists. The app provides comprehensive practice tools, lessons, and interactive features to master organ playing techniques and music theory.",
@@ -130,7 +144,7 @@ export default function LandingPage() {
       },
     },
     {
-      id: 3,
+      id: 4,
       title: "Guide AI: Landmark Scanner",
       description:
         "An AI-powered sightseeing companion that transforms your travel experience. Simply point your camera at any monument or landmark to receive detailed information and historical context from your virtual AI guide.",
@@ -143,7 +157,7 @@ export default function LandingPage() {
       },
     },
     {
-      id: 4,
+      id: 5,
       title: "Nature Scanner: AI Identifier",
       description:
         "Discover the natural world around you with AI-powered identification. Take photos of flowers, animals, landscapes, and more to instantly learn about nature's wonders with detailed descriptions and fascinating facts.",
@@ -156,7 +170,7 @@ export default function LandingPage() {
       },
     },
     {
-      id: 5,
+      id: 6,
       title: "Car Scanner: AI Identifier",
       description:
         "Discover details about any car by scanning its image. Recognize make, model, year, specs, and more using AI-powered detection.",
@@ -169,7 +183,7 @@ export default function LandingPage() {
       },
     },
     {
-      id: 6,
+      id: 7,
       title: "Doctor of Juridical Science Website",
       description:
         "A website for a Doctor of Juridical Science, featuring editable content, news updates, and a contact form powered by a headless CMS.",
@@ -183,7 +197,7 @@ export default function LandingPage() {
       },
     },
     {
-      id: 7,
+      id: 8,
       title: "Twelve Testers: Android Beta Testing",
       description:
         "Accelerate your Android app testing and deployment process with Twelve Testers. Designed for developers, it helps you meet Play Store testing requirements, gather real user feedback, and connect with a community of testers—delivering stress-free, efficient, and collaborative app testing.",
@@ -196,7 +210,7 @@ export default function LandingPage() {
       },
     },
     {
-      id: 8,
+      id: 9,
       title: "Learn Coding: CodeFlashcards",
       description:
         "Master programming faster, smarter, and more efficiently with Learn Coding: CodeFlashcards – the intelligent flashcard app designed for aspiring and experienced developers. Whether you're starting with Python or diving deep into Docker, it helps you retain what matters and learn coding your way.",
